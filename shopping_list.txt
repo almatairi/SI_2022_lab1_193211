@@ -1,7 +1,13 @@
 Water x6
 Bread x2
 Peaches x4
+<<<<<<< HEAD
 Milk x1
 Cake x3
 
+=======
+Soda x1
+Cake x2
+Cheese 
+>>>>>>> branch2
 
