@@ -1,7 +1,7 @@
-Water 
-Bread
-Peaches
-Milk
-Cake
+Water x6
+Bread x1
+Peaches x4
+Milk x1
+Cake x2
 
 
