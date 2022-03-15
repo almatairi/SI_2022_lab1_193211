@@ -1,0 +1,153 @@
+$ git init
+pc@almas-pc MINGW64 ~/labSi (master)
+$ git remote add origin https://github.com/almatairi/SI_2022_lab1_193211.git
+
+4.Со ова команда го клонирам репозиториумот
+git clone https://github.com/almatairi/SI_2022_lab1_193211.git
+
+5.Креирам текстуална датотека shopping_list.txt
+$ nano shopping_list.txt
+
+$ git add .
+
+$ git commit -m "Add 5 items to the shopping list"
+
+$ git push -f origin master
+
+6.Правам промени во текстуалната датотека додадувам количина на производите
+$ nano shopping_list.txt
+$ git add .
+$ git commit -m "Add quantities to the items"
+$ git push -u origin master
+
+7.Креирам нови гранки branch1 и branch2
+$ git branch branch1
+$ git branch branch2
+
+8.Досегашните логови
+pc@almas-pc MINGW64 ~/labSi (master)
+$ git log
+commit 9fd6a845cad76605fa8469894906858fbee8c2ef (HEAD -> master, origin/master, branch2, branch1)
+Author: Alma <101112086+almatairi@users.noreply.github.com>
+Date:   Mon Mar 14 23:53:20 2022 +0100
+
+    Add quantities to the items
+
+commit 6d2603fd611f239a22d0f314247c258327559db6
+Author: Alma <101112086+almatairi@users.noreply.github.com>
+Date:   Mon Mar 14 23:45:30 2022 +0100
+
+    Add 5 items to the shopping list
+
+9.
+$ git checkout branch1
+$ git push -u origin branch1
+$ git checkout branch2
+$ git push -u origin branch2
+
+10.Се префрлувам во гранка branch1
+$ git checkout branch1
+
+11.Го сменувам количината на петтата ставка
+$ nano shopping_list.txt
+$ git add .
+$ git commit -m "Change quantity of item #5"
+$ git push -u origin branch1
+
+12.Враќање на гранката master
+$ git checkout master
+
+13.Сменам количината на втората ставка
+$ nano shopping_list.txt
+$ git add .
+$ git commit -m "Change quantity #2"
+
+14.
+$ git push -u origin master
+
+15.Се префрлувам во гранка branch2
+$ git checkout branch2
+ 
+16.Го променувам името на ставката бр. 4 во листата и направам commit со порака “Modify item #4”
+$ nano shopping_list.txt
+$ git add .
+$ git commit -m "Modify item #4"
+
+17.Досегашните логови
+pc@almas-pc MINGW64 ~/labSi (branch2)
+$ git log
+commit 7e85bdaca86bd058c4e3ef4df7bbe896a43d7c79 (HD -> branch2)
+Author: Alma <101112086+almatairi@users.noreply.giub.com>
+Date:   Tue Mar 15 00:03:48 2022 +0100
+
+    Modify item #4
+
+commit 9fd6a845cad76605fa8469894906858fbee8c2ef (ogin/branch2)
+Author: Alma <101112086+almatairi@users.noreply.giub.com>
+Date:   Mon Mar 14 23:53:20 2022 +0100
+
+    Add quantities to the items
+
+commit 6d2603fd611f239a22d0f314247c258327559db6
+Author: Alma <101112086+almatairi@users.noreply.giub.com>
+Date:   Mon Mar 14 23:45:30 2022 +0100
+
+    Add 5 items to the shopping list
+
+
+18.Додадам уште еден производ #6
+$ nano shopping_list.txt
+$ git add .
+$ git commit -m "Modify item #4 and add item #6"
+$ git push -u origin branch2
+
+19.Досегашните логови
+pc@almas-pc MINGW64 ~/labSi (branch2)
+$ git log
+commit 831fb990fde9956f773a6fbcb6bd1d682286c901 (HEAD -> branch2, origin/branch2)
+Author: Alma <101112086+almatairi@users.noreply.github.com>
+Date:   Tue Mar 15 00:05:14 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit 7e85bdaca86bd058c4e3ef4df7bbe896a43d7c79
+Author: Alma <101112086+almatairi@users.noreply.github.com>
+Date:   Tue Mar 15 00:03:48 2022 +0100
+
+    Modify item #4
+
+commit 9fd6a845cad76605fa8469894906858fbee8c2ef
+Author: Alma <101112086+almatairi@users.noreply.github.com>
+Date:   Mon Mar 14 23:53:20 2022 +0100
+
+    Add quantities to the items
+
+commit 6d2603fd611f239a22d0f314247c258327559db6
+Author: Alma <101112086+almatairi@users.noreply.github.com>
+Date:   Mon Mar 14 23:45:30 2022 +0100
+
+    Add 5 items to the shopping list
+
+
+20.Се префрлувам во гранка master и правам git merge , имам fast-forward strategy
+$ git checkout master
+$ git merge branch1
+
+21.Спојувам гранката branch2 кон мастер , имам конфликт но потоа е употебувана recursive strategy
+$ git checkout master
+$ git merge branch1
+Auto-merging shopping_list.txt
+
+pc@almas-pc MINGW64 ~/labSi (master|MERGING)
+$ git add .
+
+pc@almas-pc MINGW64 ~/labSi (master|MERGING)
+$ git commit -m "Conflict resolved"
+[master fc5a901] Conflict resolved
+
+$ git push -u origin master
+
+
+pc@almas-pc MINGW64 ~/labSi (master)
+$ git merge branch2
+Already up to date
