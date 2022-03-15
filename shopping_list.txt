@@ -1,5 +1,5 @@
 Water x6
-Bread x1
+Bread x2
 Peaches x4
 Milk x1
 Cake x2
